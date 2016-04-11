@@ -25,6 +25,10 @@ Where.compile = (function(){
 	};
 })();
 
+Where.constants = {
+	recordVarName : 'rec'
+};
+
 Where.jsCompilers = (function(){
 	return {
 		compileWhere : function(ctx) {
@@ -83,5 +87,40 @@ Where.jsCompilers = (function(){
 
 Where.sourceGenerators = (function(){
 	return {
-	};
+		generateEqualsCondition : function(term1Src, term2Src) {
+			return term1Src + ' = ' + term2Src;
+		},
+		generateLessThanCondition : function(term1Src, term2Src) {
+			return term1Src + ' < ' + term2Src;
+		},
+		generateLessThanOrEqCondition : function(term1Src, term2Src) {
+			return term1Src + ' <= ' + term2Src;
+		},
+		generateGreaterThanCondition : function(term1Src, term2Src) {
+			return term1Src + ' > ' + term2Src;
+		},
+		generateGreaterThanOrEqCondition : function(term1Src, term2Src) {
+			return term1Src + ' >= ' + term2Src;
+		},
+		generateInCondition : function(term1Src, term2Src) {
+			return term1Src + ' >= ' + term2Src;
+		},
+		generateField : function(fieldName) {
+			return Where.constants.recordVarName + '["' + fieldName + '"]';
+		},
+		generateStringConstant : function(string) {
+			return string;
+		},
+		generateTrueConstant : function(string) {
+			return 'true';
+		},
+		generateFalseConstant : function() {
+			return 'false';
+		},
+		generateNullConstant : function() {
+			return 'null';
+		},
+		generateArrayConstant : function(constSrcs) {
+			return '[' + constSrcs.join(',') + ']';
+		},
 })();
