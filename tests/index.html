@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Where clause compiler tests</title>
+<!-- qunit style -->
+	<link rel="stylesheet" href="css/qunit-1.12.0.css"></link>
+
+<!-- Antlr runtime (which needs require.js) -->
+	<script src='js/lib/require-honey.js'></script>
+	<script>var antlr4 = require('js/lib/antlr4/index');</script>
+</head>
+<body>
+	
+<!-- Required qunit elements -->
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<!-- The tested library -->
+<script src="../js/where-clause-compiler.js" ></script>
+
+<!-- qunit library -->
+<script src="js/lib/qunit-1.19.0.js" ></script>
+
+<!-- The tests -->
+<script src="js/where-clause-compiler-tests.js" ></script>
+</body>
+</html>
