@@ -7,29 +7,27 @@ var WhereVisitor = require('./WhereVisitor').WhereVisitor;
 var grammarFileName = "Where.g4";
 
 var serializedATN = ["\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd",
-    "\3\21Z\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3",
-    "\2\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3\2\3\2\3\3\3\3\3\3\3\4\3\4\3",
-    "\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4)\n\4\3\4\3\4\5\4-\n\4\3\4\3\4\3\4",
-    "\3\4\3\4\5\4\64\n\4\6\4\66\n\4\r\4\16\4\67\5\4:\n\4\3\5\3\5\3\6\3\6",
-    "\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7",
-    "\5\7Q\n\7\3\b\3\b\3\b\3\b\3\b\5\bX\n\b\3\b\2\2\t\2\4\6\b\n\f\16\2\2",
-    "a\2\20\3\2\2\2\4\33\3\2\2\2\69\3\2\2\2\b;\3\2\2\2\n=\3\2\2\2\fP\3\2",
-    "\2\2\16W\3\2\2\2\20\21\7\3\2\2\21\26\5\16\b\2\22\23\7\4\2\2\23\25\5",
-    "\16\b\2\24\22\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\31",
-    "\3\2\2\2\30\26\3\2\2\2\31\32\7\5\2\2\32\3\3\2\2\2\33\34\7\6\2\2\34\35",
-    "\5\6\4\2\35\5\3\2\2\2\36:\5\f\7\2\37 \7\3\2\2 !\5\6\4\2!\"\7\5\2\2\"",
-    ":\3\2\2\2#)\5\f\7\2$%\7\3\2\2%&\5\6\4\2&\'\7\5\2\2\')\3\2\2\2(#\3\2",
-    "\2\2($\3\2\2\2)\65\3\2\2\2*-\5\b\5\2+-\5\n\6\2,*\3\2\2\2,+\3\2\2\2-",
-    "\63\3\2\2\2.\64\5\f\7\2/\60\7\3\2\2\60\61\5\6\4\2\61\62\7\5\2\2\62\64",
-    "\3\2\2\2\63.\3\2\2\2\63/\3\2\2\2\64\66\3\2\2\2\65,\3\2\2\2\66\67\3\2",
-    "\2\2\67\65\3\2\2\2\678\3\2\2\28:\3\2\2\29\36\3\2\2\29\37\3\2\2\29(\3",
-    "\2\2\2:\7\3\2\2\2;<\7\7\2\2<\t\3\2\2\2=>\7\b\2\2>\13\3\2\2\2?@\7\16",
-    "\2\2@A\7\f\2\2AQ\7\16\2\2BC\7\16\2\2CD\7\f\2\2DQ\5\16\b\2EF\5\16\b\2",
-    "FG\7\f\2\2GH\7\16\2\2HQ\3\2\2\2IJ\5\16\b\2JK\7\f\2\2KL\5\16\b\2LQ\3",
-    "\2\2\2MN\7\16\2\2NO\7\r\2\2OQ\5\2\2\2P?\3\2\2\2PB\3\2\2\2PE\3\2\2\2",
-    "PI\3\2\2\2PM\3\2\2\2Q\r\3\2\2\2RX\7\17\2\2SX\7\20\2\2TX\7\t\2\2UX\7",
-    "\n\2\2VX\7\13\2\2WR\3\2\2\2WS\3\2\2\2WT\3\2\2\2WU\3\2\2\2WV\3\2\2\2",
-    "X\17\3\2\2\2\n\26(,\63\679PW"].join("");
+    "\3\24P\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2\3\3\3\3\3",
+    "\3\3\3\3\3\3\3\3\3\3\3\5\3\30\n\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3 \n\3\f",
+    "\3\16\3#\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3",
+    "\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4<\n\4\3\5\3\5\3\5\3\5\7\5",
+    "B\n\5\f\5\16\5E\13\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\5\6N\n\6\3\6\2\3\4",
+    "\7\2\4\6\b\n\2\2Z\2\f\3\2\2\2\4\27\3\2\2\2\6;\3\2\2\2\b=\3\2\2\2\nM",
+    "\3\2\2\2\f\r\7\3\2\2\r\16\5\4\3\2\16\3\3\2\2\2\17\20\b\3\1\2\20\21\7",
+    "\4\2\2\21\30\5\4\3\7\22\30\5\6\4\2\23\24\7\5\2\2\24\25\5\4\3\2\25\26",
+    "\7\6\2\2\26\30\3\2\2\2\27\17\3\2\2\2\27\22\3\2\2\2\27\23\3\2\2\2\30",
+    "!\3\2\2\2\31\32\f\4\2\2\32\33\7\7\2\2\33 \5\4\3\5\34\35\f\3\2\2\35\36",
+    "\7\b\2\2\36 \5\4\3\4\37\31\3\2\2\2\37\34\3\2\2\2 #\3\2\2\2!\37\3\2\2",
+    "\2!\"\3\2\2\2\"\5\3\2\2\2#!\3\2\2\2$<\7\t\2\2%<\7\n\2\2&\'\7\21\2\2",
+    "\'(\7\17\2\2(<\7\21\2\2)*\7\21\2\2*+\7\17\2\2+<\5\n\6\2,-\5\n\6\2-.",
+    "\7\17\2\2./\7\21\2\2/<\3\2\2\2\60\61\5\n\6\2\61\62\7\17\2\2\62\63\5",
+    "\n\6\2\63<\3\2\2\2\64\65\7\21\2\2\65\66\7\20\2\2\66<\5\b\5\2\678\5\n",
+    "\6\289\7\20\2\29:\5\b\5\2:<\3\2\2\2;$\3\2\2\2;%\3\2\2\2;&\3\2\2\2;)",
+    "\3\2\2\2;,\3\2\2\2;\60\3\2\2\2;\64\3\2\2\2;\67\3\2\2\2<\7\3\2\2\2=>",
+    "\7\13\2\2>C\5\n\6\2?@\7\f\2\2@B\5\n\6\2A?\3\2\2\2BE\3\2\2\2CA\3\2\2",
+    "\2CD\3\2\2\2DF\3\2\2\2EC\3\2\2\2FG\7\r\2\2G\t\3\2\2\2HN\7\22\2\2IN\7",
+    "\23\2\2JN\7\t\2\2KN\7\n\2\2LN\7\16\2\2MH\3\2\2\2MI\3\2\2\2MJ\3\2\2\2",
+    "MK\3\2\2\2ML\3\2\2\2N\13\3\2\2\2\b\27\37!;CM"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -38,15 +36,16 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ 'null', "'('", "','", "')'", "'where'", "'and'", "'or'", 
-                     "'true'", "'false'", "'null'", 'null', "'in'" ];
+var literalNames = [ 'null', "'where'", "'not'", "'('", "')'", "'and'", 
+                     "'or'", "'true'", "'false'", "'['", "','", "']'", "'null'", 
+                     'null', "'in'" ];
 
 var symbolicNames = [ 'null', 'null', 'null', 'null', 'null', 'null', 'null', 
-                      'null', 'null', 'null', "OPERATOR", "ARRAYOPERATOR", 
-                      "FIELD", "STRING", "NUMBER", "WS" ];
+                      'null', 'null', 'null', 'null', 'null', 'null', "OPERATOR", 
+                      "ARRAYOPERATOR", "FIELD", "STRING", "NUMBER", "WS" ];
 
-var ruleNames =  [ "arrayconstant", "where", "conditionset", "and", "or", 
-                   "condition", "constant" ];
+var ruleNames =  [ "where", "conditionset", "condition", "arrayconstant", 
+                   "constant" ];
 
 function WhereParser (input) {
 	antlr4.Parser.call(this, input);
@@ -76,111 +75,21 @@ WhereParser.T__5 = 6;
 WhereParser.T__6 = 7;
 WhereParser.T__7 = 8;
 WhereParser.T__8 = 9;
-WhereParser.OPERATOR = 10;
-WhereParser.ARRAYOPERATOR = 11;
-WhereParser.FIELD = 12;
-WhereParser.STRING = 13;
-WhereParser.NUMBER = 14;
-WhereParser.WS = 15;
+WhereParser.T__9 = 10;
+WhereParser.T__10 = 11;
+WhereParser.T__11 = 12;
+WhereParser.OPERATOR = 13;
+WhereParser.ARRAYOPERATOR = 14;
+WhereParser.FIELD = 15;
+WhereParser.STRING = 16;
+WhereParser.NUMBER = 17;
+WhereParser.WS = 18;
 
-WhereParser.RULE_arrayconstant = 0;
-WhereParser.RULE_where = 1;
-WhereParser.RULE_conditionset = 2;
-WhereParser.RULE_and = 3;
-WhereParser.RULE_or = 4;
-WhereParser.RULE_condition = 5;
-WhereParser.RULE_constant = 6;
-
-function ArrayconstantContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = WhereParser.RULE_arrayconstant;
-    return this;
-}
-
-ArrayconstantContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-ArrayconstantContext.prototype.constructor = ArrayconstantContext;
-
-ArrayconstantContext.prototype.constant = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ConstantContext);
-    } else {
-        return this.getTypedRuleContext(ConstantContext,i);
-    }
-};
-
-ArrayconstantContext.prototype.enterRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.enterArrayconstant(this);
-	}
-};
-
-ArrayconstantContext.prototype.exitRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.exitArrayconstant(this);
-	}
-};
-
-ArrayconstantContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof WhereVisitor ) {
-        return visitor.visitArrayconstant(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-WhereParser.ArrayconstantContext = ArrayconstantContext;
-
-WhereParser.prototype.arrayconstant = function() {
-
-    var localctx = new ArrayconstantContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 0, WhereParser.RULE_arrayconstant);
-    var _la = 0; // Token type
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 14;
-        this.match(WhereParser.T__0);
-        this.state = 15;
-        this.constant();
-        this.state = 20;
-        this._errHandler.sync(this);
-        _la = this._input.LA(1);
-        while(_la===WhereParser.T__1) {
-            this.state = 16;
-            this.match(WhereParser.T__1);
-            this.state = 17;
-            this.constant();
-            this.state = 22;
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-        }
-        this.state = 23;
-        this.match(WhereParser.T__2);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
+WhereParser.RULE_where = 0;
+WhereParser.RULE_conditionset = 1;
+WhereParser.RULE_condition = 2;
+WhereParser.RULE_arrayconstant = 3;
+WhereParser.RULE_constant = 4;
 
 function WhereContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -230,13 +139,13 @@ WhereParser.WhereContext = WhereContext;
 WhereParser.prototype.where = function() {
 
     var localctx = new WhereContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 2, WhereParser.RULE_where);
+    this.enterRule(localctx, 0, WhereParser.RULE_where);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 25;
-        this.match(WhereParser.T__3);
-        this.state = 26;
-        this.conditionset();
+        this.state = 10;
+        this.match(WhereParser.T__0);
+        this.state = 11;
+        this.conditionset(0);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -272,7 +181,6 @@ ConditionsetContext.prototype.constructor = ConditionsetContext;
 ConditionsetContext.prototype.copyFrom = function(ctx) {
     antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
 };
-
 
 function ParenSetContext(parser, ctx) {
 	ConditionsetContext.call(this, parser);
@@ -344,29 +252,53 @@ AtomicSetContext.prototype.accept = function(visitor) {
 };
 
 
-function AndOrSetContext(parser, ctx) {
+function NotSetContext(parser, ctx) {
 	ConditionsetContext.call(this, parser);
     ConditionsetContext.prototype.copyFrom.call(this, ctx);
     return this;
 }
 
-AndOrSetContext.prototype = Object.create(ConditionsetContext.prototype);
-AndOrSetContext.prototype.constructor = AndOrSetContext;
+NotSetContext.prototype = Object.create(ConditionsetContext.prototype);
+NotSetContext.prototype.constructor = NotSetContext;
 
-WhereParser.AndOrSetContext = AndOrSetContext;
+WhereParser.NotSetContext = NotSetContext;
 
-AndOrSetContext.prototype.condition = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(ConditionContext);
+NotSetContext.prototype.conditionset = function() {
+    return this.getTypedRuleContext(ConditionsetContext,0);
+};
+NotSetContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterNotSet(this);
+	}
+};
+
+NotSetContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitNotSet(this);
+	}
+};
+
+NotSetContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitNotSet(this);
     } else {
-        return this.getTypedRuleContext(ConditionContext,i);
+        return visitor.visitChildren(this);
     }
 };
 
-AndOrSetContext.prototype.conditionset = function(i) {
+
+function AndSetContext(parser, ctx) {
+	ConditionsetContext.call(this, parser);
+    ConditionsetContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+AndSetContext.prototype = Object.create(ConditionsetContext.prototype);
+AndSetContext.prototype.constructor = AndSetContext;
+
+WhereParser.AndSetContext = AndSetContext;
+
+AndSetContext.prototype.conditionset = function(i) {
     if(i===undefined) {
         i = null;
     }
@@ -376,43 +308,63 @@ AndOrSetContext.prototype.conditionset = function(i) {
         return this.getTypedRuleContext(ConditionsetContext,i);
     }
 };
-
-AndOrSetContext.prototype.and = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(AndContext);
-    } else {
-        return this.getTypedRuleContext(AndContext,i);
-    }
-};
-
-AndOrSetContext.prototype.or = function(i) {
-    if(i===undefined) {
-        i = null;
-    }
-    if(i===null) {
-        return this.getTypedRuleContexts(OrContext);
-    } else {
-        return this.getTypedRuleContext(OrContext,i);
-    }
-};
-AndOrSetContext.prototype.enterRule = function(listener) {
+AndSetContext.prototype.enterRule = function(listener) {
     if(listener instanceof WhereListener ) {
-        listener.enterAndOrSet(this);
+        listener.enterAndSet(this);
 	}
 };
 
-AndOrSetContext.prototype.exitRule = function(listener) {
+AndSetContext.prototype.exitRule = function(listener) {
     if(listener instanceof WhereListener ) {
-        listener.exitAndOrSet(this);
+        listener.exitAndSet(this);
 	}
 };
 
-AndOrSetContext.prototype.accept = function(visitor) {
+AndSetContext.prototype.accept = function(visitor) {
     if ( visitor instanceof WhereVisitor ) {
-        return visitor.visitAndOrSet(this);
+        return visitor.visitAndSet(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function OrSetContext(parser, ctx) {
+	ConditionsetContext.call(this, parser);
+    ConditionsetContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+OrSetContext.prototype = Object.create(ConditionsetContext.prototype);
+OrSetContext.prototype.constructor = OrSetContext;
+
+WhereParser.OrSetContext = OrSetContext;
+
+OrSetContext.prototype.conditionset = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(ConditionsetContext);
+    } else {
+        return this.getTypedRuleContext(ConditionsetContext,i);
+    }
+};
+OrSetContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterOrSet(this);
+	}
+};
+
+OrSetContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitOrSet(this);
+	}
+};
+
+OrSetContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitOrSet(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -420,244 +372,112 @@ AndOrSetContext.prototype.accept = function(visitor) {
 
 
 
-WhereParser.ConditionsetContext = ConditionsetContext;
-
-WhereParser.prototype.conditionset = function() {
-
-    var localctx = new ConditionsetContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 4, WhereParser.RULE_conditionset);
-    var _la = 0; // Token type
+WhereParser.prototype.conditionset = function(_p) {
+	if(_p===undefined) {
+	    _p = 0;
+	}
+    var _parentctx = this._ctx;
+    var _parentState = this.state;
+    var localctx = new ConditionsetContext(this, this._ctx, _parentState);
+    var _prevctx = localctx;
+    var _startState = 2;
+    this.enterRecursionRule(localctx, 2, WhereParser.RULE_conditionset, _p);
     try {
-        this.state = 55;
-        var la_ = this._interp.adaptivePredict(this._input,5,this._ctx);
-        switch(la_) {
-        case 1:
+        this.enterOuterAlt(localctx, 1);
+        this.state = 21;
+        switch(this._input.LA(1)) {
+        case WhereParser.T__1:
+            localctx = new NotSetContext(this, localctx);
+            this._ctx = localctx;
+            _prevctx = localctx;
+
+            this.state = 14;
+            this.match(WhereParser.T__1);
+            this.state = 15;
+            this.conditionset(5);
+            break;
+        case WhereParser.T__6:
+        case WhereParser.T__7:
+        case WhereParser.T__11:
+        case WhereParser.FIELD:
+        case WhereParser.STRING:
+        case WhereParser.NUMBER:
             localctx = new AtomicSetContext(this, localctx);
-            this.enterOuterAlt(localctx, 1);
-            this.state = 28;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 16;
             this.condition();
             break;
-
-        case 2:
+        case WhereParser.T__2:
             localctx = new ParenSetContext(this, localctx);
-            this.enterOuterAlt(localctx, 2);
-            this.state = 29;
-            this.match(WhereParser.T__0);
-            this.state = 30;
-            this.conditionset();
-            this.state = 31;
+            this._ctx = localctx;
+            _prevctx = localctx;
+            this.state = 17;
             this.match(WhereParser.T__2);
+            this.state = 18;
+            this.conditionset(0);
+            this.state = 19;
+            this.match(WhereParser.T__3);
             break;
-
-        case 3:
-            localctx = new AndOrSetContext(this, localctx);
-            this.enterOuterAlt(localctx, 3);
-            this.state = 38;
-            switch(this._input.LA(1)) {
-            case WhereParser.T__6:
-            case WhereParser.T__7:
-            case WhereParser.T__8:
-            case WhereParser.FIELD:
-            case WhereParser.STRING:
-            case WhereParser.NUMBER:
-                this.state = 33;
-                this.condition();
-                break;
-            case WhereParser.T__0:
-                this.state = 34;
-                this.match(WhereParser.T__0);
-                this.state = 35;
-                this.conditionset();
-                this.state = 36;
-                this.match(WhereParser.T__2);
-                break;
-            default:
-                throw new antlr4.error.NoViableAltException(this);
-            }
-            this.state = 51; 
-            this._errHandler.sync(this);
-            _la = this._input.LA(1);
-            do {
-                this.state = 42;
-                switch(this._input.LA(1)) {
-                case WhereParser.T__4:
-                    this.state = 40;
-                    this.and();
-                    break;
-                case WhereParser.T__5:
-                    this.state = 41;
-                    this.or();
-                    break;
-                default:
-                    throw new antlr4.error.NoViableAltException(this);
-                }
-                this.state = 49;
-                switch(this._input.LA(1)) {
-                case WhereParser.T__6:
-                case WhereParser.T__7:
-                case WhereParser.T__8:
-                case WhereParser.FIELD:
-                case WhereParser.STRING:
-                case WhereParser.NUMBER:
-                    this.state = 44;
-                    this.condition();
-                    break;
-                case WhereParser.T__0:
-                    this.state = 45;
-                    this.match(WhereParser.T__0);
-                    this.state = 46;
-                    this.conditionset();
-                    this.state = 47;
-                    this.match(WhereParser.T__2);
-                    break;
-                default:
-                    throw new antlr4.error.NoViableAltException(this);
-                }
-                this.state = 53; 
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-            } while(_la===WhereParser.T__4 || _la===WhereParser.T__5);
-            break;
-
+        default:
+            throw new antlr4.error.NoViableAltException(this);
         }
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
+        this._ctx.stop = this._input.LT(-1);
+        this.state = 31;
+        this._errHandler.sync(this);
+        var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
+        while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
+            if(_alt===1) {
+                if(this._parseListeners!==null) {
+                    this.triggerExitRuleEvent();
+                }
+                _prevctx = localctx;
+                this.state = 29;
+                var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
+                switch(la_) {
+                case 1:
+                    localctx = new AndSetContext(this, new ConditionsetContext(this, _parentctx, _parentState));
+                    this.pushNewRecursionContext(localctx, _startState, WhereParser.RULE_conditionset);
+                    this.state = 23;
+                    if (!( this.precpred(this._ctx, 2))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 2)");
+                    }
+                    this.state = 24;
+                    this.match(WhereParser.T__4);
+                    this.state = 25;
+                    this.conditionset(3);
+                    break;
+
+                case 2:
+                    localctx = new OrSetContext(this, new ConditionsetContext(this, _parentctx, _parentState));
+                    this.pushNewRecursionContext(localctx, _startState, WhereParser.RULE_conditionset);
+                    this.state = 26;
+                    if (!( this.precpred(this._ctx, 1))) {
+                        throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
+                    }
+                    this.state = 27;
+                    this.match(WhereParser.T__5);
+                    this.state = 28;
+                    this.conditionset(2);
+                    break;
+
+                } 
+            }
+            this.state = 33;
+            this._errHandler.sync(this);
+            _alt = this._interp.adaptivePredict(this._input,2,this._ctx);
+        }
+
+    } catch( error) {
+        if(error instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = error;
+	        this._errHandler.reportError(this, error);
+	        this._errHandler.recover(this, error);
 	    } else {
-	    	throw re;
+	    	throw error;
 	    }
     } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-function AndContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = WhereParser.RULE_and;
-    return this;
-}
-
-AndContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-AndContext.prototype.constructor = AndContext;
-
-
-AndContext.prototype.enterRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.enterAnd(this);
-	}
-};
-
-AndContext.prototype.exitRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.exitAnd(this);
-	}
-};
-
-AndContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof WhereVisitor ) {
-        return visitor.visitAnd(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-WhereParser.AndContext = AndContext;
-
-WhereParser.prototype.and = function() {
-
-    var localctx = new AndContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 6, WhereParser.RULE_and);
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 57;
-        this.match(WhereParser.T__4);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
-    }
-    return localctx;
-};
-
-function OrContext(parser, parent, invokingState) {
-	if(parent===undefined) {
-	    parent = null;
-	}
-	if(invokingState===undefined || invokingState===null) {
-		invokingState = -1;
-	}
-	antlr4.ParserRuleContext.call(this, parent, invokingState);
-    this.parser = parser;
-    this.ruleIndex = WhereParser.RULE_or;
-    return this;
-}
-
-OrContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
-OrContext.prototype.constructor = OrContext;
-
-
-OrContext.prototype.enterRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.enterOr(this);
-	}
-};
-
-OrContext.prototype.exitRule = function(listener) {
-    if(listener instanceof WhereListener ) {
-        listener.exitOr(this);
-	}
-};
-
-OrContext.prototype.accept = function(visitor) {
-    if ( visitor instanceof WhereVisitor ) {
-        return visitor.visitOr(this);
-    } else {
-        return visitor.visitChildren(this);
-    }
-};
-
-
-
-
-WhereParser.OrContext = OrContext;
-
-WhereParser.prototype.or = function() {
-
-    var localctx = new OrContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 8, WhereParser.RULE_or);
-    try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 59;
-        this.match(WhereParser.T__5);
-    } catch (re) {
-    	if(re instanceof antlr4.error.RecognitionException) {
-	        localctx.exception = re;
-	        this._errHandler.reportError(this, re);
-	        this._errHandler.recover(this, re);
-	    } else {
-	    	throw re;
-	    }
-    } finally {
-        this.exitRule();
+        this.unrollRecursionContexts(_parentctx)
     }
     return localctx;
 };
@@ -771,6 +591,49 @@ FieldArrayConditionContext.prototype.accept = function(visitor) {
 };
 
 
+function ConstArrayConditionContext(parser, ctx) {
+	ConditionContext.call(this, parser);
+    ConditionContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+ConstArrayConditionContext.prototype = Object.create(ConditionContext.prototype);
+ConstArrayConditionContext.prototype.constructor = ConstArrayConditionContext;
+
+WhereParser.ConstArrayConditionContext = ConstArrayConditionContext;
+
+ConstArrayConditionContext.prototype.constant = function() {
+    return this.getTypedRuleContext(ConstantContext,0);
+};
+
+ConstArrayConditionContext.prototype.ARRAYOPERATOR = function() {
+    return this.getToken(WhereParser.ARRAYOPERATOR, 0);
+};
+
+ConstArrayConditionContext.prototype.arrayconstant = function() {
+    return this.getTypedRuleContext(ArrayconstantContext,0);
+};
+ConstArrayConditionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterConstArrayCondition(this);
+	}
+};
+
+ConstArrayConditionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitConstArrayCondition(this);
+	}
+};
+
+ConstArrayConditionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitConstArrayCondition(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 function FieldFieldConditionContext(parser, ctx) {
 	ConditionContext.call(this, parser);
     ConditionContext.prototype.copyFrom.call(this, ctx);
@@ -818,6 +681,38 @@ FieldFieldConditionContext.prototype.accept = function(visitor) {
 };
 
 
+function TrueConditionContext(parser, ctx) {
+	ConditionContext.call(this, parser);
+    ConditionContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+TrueConditionContext.prototype = Object.create(ConditionContext.prototype);
+TrueConditionContext.prototype.constructor = TrueConditionContext;
+
+WhereParser.TrueConditionContext = TrueConditionContext;
+
+TrueConditionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterTrueCondition(this);
+	}
+};
+
+TrueConditionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitTrueCondition(this);
+	}
+};
+
+TrueConditionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitTrueCondition(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 function FieldConstConditionContext(parser, ctx) {
 	ConditionContext.call(this, parser);
     ConditionContext.prototype.copyFrom.call(this, ctx);
@@ -855,6 +750,38 @@ FieldConstConditionContext.prototype.exitRule = function(listener) {
 FieldConstConditionContext.prototype.accept = function(visitor) {
     if ( visitor instanceof WhereVisitor ) {
         return visitor.visitFieldConstCondition(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function FalseConditionContext(parser, ctx) {
+	ConditionContext.call(this, parser);
+    ConditionContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+FalseConditionContext.prototype = Object.create(ConditionContext.prototype);
+FalseConditionContext.prototype.constructor = FalseConditionContext;
+
+WhereParser.FalseConditionContext = FalseConditionContext;
+
+FalseConditionContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterFalseCondition(this);
+	}
+};
+
+FalseConditionContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitFalseCondition(this);
+	}
+};
+
+FalseConditionContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitFalseCondition(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -913,67 +840,183 @@ WhereParser.ConditionContext = ConditionContext;
 WhereParser.prototype.condition = function() {
 
     var localctx = new ConditionContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 10, WhereParser.RULE_condition);
+    this.enterRule(localctx, 4, WhereParser.RULE_condition);
     try {
-        this.state = 78;
-        var la_ = this._interp.adaptivePredict(this._input,6,this._ctx);
+        this.state = 57;
+        var la_ = this._interp.adaptivePredict(this._input,3,this._ctx);
         switch(la_) {
         case 1:
-            localctx = new FieldFieldConditionContext(this, localctx);
+            localctx = new TrueConditionContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 61;
-            this.match(WhereParser.FIELD);
-            this.state = 62;
-            this.match(WhereParser.OPERATOR);
-            this.state = 63;
-            this.match(WhereParser.FIELD);
+            this.state = 34;
+            this.match(WhereParser.T__6);
             break;
 
         case 2:
-            localctx = new FieldConstConditionContext(this, localctx);
+            localctx = new FalseConditionContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 64;
-            this.match(WhereParser.FIELD);
-            this.state = 65;
-            this.match(WhereParser.OPERATOR);
-            this.state = 66;
-            this.constant();
+            this.state = 35;
+            this.match(WhereParser.T__7);
             break;
 
         case 3:
-            localctx = new ConstFieldConditionContext(this, localctx);
+            localctx = new FieldFieldConditionContext(this, localctx);
             this.enterOuterAlt(localctx, 3);
-            this.state = 67;
-            this.constant();
-            this.state = 68;
+            this.state = 36;
+            this.match(WhereParser.FIELD);
+            this.state = 37;
             this.match(WhereParser.OPERATOR);
-            this.state = 69;
+            this.state = 38;
             this.match(WhereParser.FIELD);
             break;
 
         case 4:
-            localctx = new ConstConstConditionContext(this, localctx);
+            localctx = new FieldConstConditionContext(this, localctx);
             this.enterOuterAlt(localctx, 4);
-            this.state = 71;
-            this.constant();
-            this.state = 72;
+            this.state = 39;
+            this.match(WhereParser.FIELD);
+            this.state = 40;
             this.match(WhereParser.OPERATOR);
-            this.state = 73;
+            this.state = 41;
             this.constant();
             break;
 
         case 5:
-            localctx = new FieldArrayConditionContext(this, localctx);
+            localctx = new ConstFieldConditionContext(this, localctx);
             this.enterOuterAlt(localctx, 5);
-            this.state = 75;
+            this.state = 42;
+            this.constant();
+            this.state = 43;
+            this.match(WhereParser.OPERATOR);
+            this.state = 44;
             this.match(WhereParser.FIELD);
-            this.state = 76;
+            break;
+
+        case 6:
+            localctx = new ConstConstConditionContext(this, localctx);
+            this.enterOuterAlt(localctx, 6);
+            this.state = 46;
+            this.constant();
+            this.state = 47;
+            this.match(WhereParser.OPERATOR);
+            this.state = 48;
+            this.constant();
+            break;
+
+        case 7:
+            localctx = new FieldArrayConditionContext(this, localctx);
+            this.enterOuterAlt(localctx, 7);
+            this.state = 50;
+            this.match(WhereParser.FIELD);
+            this.state = 51;
             this.match(WhereParser.ARRAYOPERATOR);
-            this.state = 77;
+            this.state = 52;
+            this.arrayconstant();
+            break;
+
+        case 8:
+            localctx = new ConstArrayConditionContext(this, localctx);
+            this.enterOuterAlt(localctx, 8);
+            this.state = 53;
+            this.constant();
+            this.state = 54;
+            this.match(WhereParser.ARRAYOPERATOR);
+            this.state = 55;
             this.arrayconstant();
             break;
 
         }
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+function ArrayconstantContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = WhereParser.RULE_arrayconstant;
+    return this;
+}
+
+ArrayconstantContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+ArrayconstantContext.prototype.constructor = ArrayconstantContext;
+
+ArrayconstantContext.prototype.constant = function(i) {
+    if(i===undefined) {
+        i = null;
+    }
+    if(i===null) {
+        return this.getTypedRuleContexts(ConstantContext);
+    } else {
+        return this.getTypedRuleContext(ConstantContext,i);
+    }
+};
+
+ArrayconstantContext.prototype.enterRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.enterArrayconstant(this);
+	}
+};
+
+ArrayconstantContext.prototype.exitRule = function(listener) {
+    if(listener instanceof WhereListener ) {
+        listener.exitArrayconstant(this);
+	}
+};
+
+ArrayconstantContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof WhereVisitor ) {
+        return visitor.visitArrayconstant(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+
+WhereParser.ArrayconstantContext = ArrayconstantContext;
+
+WhereParser.prototype.arrayconstant = function() {
+
+    var localctx = new ArrayconstantContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 6, WhereParser.RULE_arrayconstant);
+    var _la = 0; // Token type
+    try {
+        this.enterOuterAlt(localctx, 1);
+        this.state = 59;
+        this.match(WhereParser.T__8);
+        this.state = 60;
+        this.constant();
+        this.state = 65;
+        this._errHandler.sync(this);
+        _la = this._input.LA(1);
+        while(_la===WhereParser.T__9) {
+            this.state = 61;
+            this.match(WhereParser.T__9);
+            this.state = 62;
+            this.constant();
+            this.state = 67;
+            this._errHandler.sync(this);
+            _la = this._input.LA(1);
+        }
+        this.state = 68;
+        this.match(WhereParser.T__10);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;
@@ -1183,39 +1226,39 @@ WhereParser.ConstantContext = ConstantContext;
 WhereParser.prototype.constant = function() {
 
     var localctx = new ConstantContext(this, this._ctx, this.state);
-    this.enterRule(localctx, 12, WhereParser.RULE_constant);
+    this.enterRule(localctx, 8, WhereParser.RULE_constant);
     try {
-        this.state = 85;
+        this.state = 75;
         switch(this._input.LA(1)) {
         case WhereParser.STRING:
             localctx = new StringConstContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 80;
+            this.state = 70;
             this.match(WhereParser.STRING);
             break;
         case WhereParser.NUMBER:
             localctx = new NumberConstContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 81;
+            this.state = 71;
             this.match(WhereParser.NUMBER);
             break;
         case WhereParser.T__6:
             localctx = new TrueConstContext(this, localctx);
             this.enterOuterAlt(localctx, 3);
-            this.state = 82;
+            this.state = 72;
             this.match(WhereParser.T__6);
             break;
         case WhereParser.T__7:
             localctx = new FalseConstContext(this, localctx);
             this.enterOuterAlt(localctx, 4);
-            this.state = 83;
+            this.state = 73;
             this.match(WhereParser.T__7);
             break;
-        case WhereParser.T__8:
+        case WhereParser.T__11:
             localctx = new NullConstContext(this, localctx);
             this.enterOuterAlt(localctx, 5);
-            this.state = 84;
-            this.match(WhereParser.T__8);
+            this.state = 74;
+            this.match(WhereParser.T__11);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -1232,6 +1275,27 @@ WhereParser.prototype.constant = function() {
         this.exitRule();
     }
     return localctx;
+};
+
+
+WhereParser.prototype.sempred = function(localctx, ruleIndex, predIndex) {
+	switch(ruleIndex) {
+	case 1:
+			return this.conditionset_sempred(localctx, predIndex);
+    default:
+        throw "No predicate with index:" + ruleIndex;
+   }
+};
+
+WhereParser.prototype.conditionset_sempred = function(localctx, predIndex) {
+	switch(predIndex) {
+		case 0:
+			return this.precpred(this._ctx, 2);
+		case 1:
+			return this.precpred(this._ctx, 1);
+		default:
+			throw "No predicate with index:" + predIndex;
+	}
 };
 
 

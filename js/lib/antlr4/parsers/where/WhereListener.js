@@ -11,30 +11,12 @@ function WhereListener() {
 WhereListener.prototype = Object.create(antlr4.tree.ParseTreeListener.prototype);
 WhereListener.prototype.constructor = WhereListener;
 
-// Enter a parse tree produced by WhereParser#arrayconstant.
-WhereListener.prototype.enterArrayconstant = function(ctx) {
-};
-
-// Exit a parse tree produced by WhereParser#arrayconstant.
-WhereListener.prototype.exitArrayconstant = function(ctx) {
-};
-
-
 // Enter a parse tree produced by WhereParser#where.
 WhereListener.prototype.enterWhere = function(ctx) {
 };
 
 // Exit a parse tree produced by WhereParser#where.
 WhereListener.prototype.exitWhere = function(ctx) {
-};
-
-
-// Enter a parse tree produced by WhereParser#atomicSet.
-WhereListener.prototype.enterAtomicSet = function(ctx) {
-};
-
-// Exit a parse tree produced by WhereParser#atomicSet.
-WhereListener.prototype.exitAtomicSet = function(ctx) {
 };
 
 
@@ -47,30 +29,57 @@ WhereListener.prototype.exitParenSet = function(ctx) {
 };
 
 
-// Enter a parse tree produced by WhereParser#andOrSet.
-WhereListener.prototype.enterAndOrSet = function(ctx) {
+// Enter a parse tree produced by WhereParser#atomicSet.
+WhereListener.prototype.enterAtomicSet = function(ctx) {
 };
 
-// Exit a parse tree produced by WhereParser#andOrSet.
-WhereListener.prototype.exitAndOrSet = function(ctx) {
-};
-
-
-// Enter a parse tree produced by WhereParser#and.
-WhereListener.prototype.enterAnd = function(ctx) {
-};
-
-// Exit a parse tree produced by WhereParser#and.
-WhereListener.prototype.exitAnd = function(ctx) {
+// Exit a parse tree produced by WhereParser#atomicSet.
+WhereListener.prototype.exitAtomicSet = function(ctx) {
 };
 
 
-// Enter a parse tree produced by WhereParser#or.
-WhereListener.prototype.enterOr = function(ctx) {
+// Enter a parse tree produced by WhereParser#notSet.
+WhereListener.prototype.enterNotSet = function(ctx) {
 };
 
-// Exit a parse tree produced by WhereParser#or.
-WhereListener.prototype.exitOr = function(ctx) {
+// Exit a parse tree produced by WhereParser#notSet.
+WhereListener.prototype.exitNotSet = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#andSet.
+WhereListener.prototype.enterAndSet = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#andSet.
+WhereListener.prototype.exitAndSet = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#orSet.
+WhereListener.prototype.enterOrSet = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#orSet.
+WhereListener.prototype.exitOrSet = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#trueCondition.
+WhereListener.prototype.enterTrueCondition = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#trueCondition.
+WhereListener.prototype.exitTrueCondition = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#falseCondition.
+WhereListener.prototype.enterFalseCondition = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#falseCondition.
+WhereListener.prototype.exitFalseCondition = function(ctx) {
 };
 
 
@@ -116,6 +125,24 @@ WhereListener.prototype.enterFieldArrayCondition = function(ctx) {
 
 // Exit a parse tree produced by WhereParser#fieldArrayCondition.
 WhereListener.prototype.exitFieldArrayCondition = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#constArrayCondition.
+WhereListener.prototype.enterConstArrayCondition = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#constArrayCondition.
+WhereListener.prototype.exitConstArrayCondition = function(ctx) {
+};
+
+
+// Enter a parse tree produced by WhereParser#arrayconstant.
+WhereListener.prototype.enterArrayconstant = function(ctx) {
+};
+
+// Exit a parse tree produced by WhereParser#arrayconstant.
+WhereListener.prototype.exitArrayconstant = function(ctx) {
 };
 
 

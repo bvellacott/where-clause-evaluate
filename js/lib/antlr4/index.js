@@ -15,7 +15,7 @@ exports.ParserRuleContext = require('./ParserRuleContext').ParserRuleContext;
 exports.Interval = require('./IntervalSet').Interval;
 exports.Utils = require('./Utils');
 
-exports.SmackLexer = require('./parsers/smack/SmackLexer').SmackLexer;
-exports.SmackListener = require('./parsers/smack/SmackListener').SmackListener;
-exports.SmackVisitor = require('./parsers/smack/SmackVisitor').SmackVisitor;
-exports.SmackParser = require('./parsers/smack/SmackParser').SmackParser;
+exports.WhereLexer = require('./parsers/where/WhereLexer').WhereLexer;
+exports.WhereListener = require('./parsers/where/WhereListener').WhereListener;
+exports.WhereVisitor = require('./parsers/where/WhereVisitor').WhereVisitor;
+exports.WhereParser = require('./parsers/where/WhereParser').WhereParser;
