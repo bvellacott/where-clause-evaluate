@@ -1,0 +1,14 @@
+#!/bin/bash
+antlr4 -Dlanguage=JavaScript -visitor ./Where.g4 -package WherePackage
+replace antlr4/index antlr4 WhereLexer.js WhereLexer_.js
+replace antlr4/index antlr4 WhereListener.js WhereListener_.js
+replace antlr4/index antlr4 WhereVisitor.js WhereVisitor_.js
+replace antlr4/index antlr4 WhereParser.js WhereParser_.js
+cp WhereLexer_.js WhereLexer.js
+rm WhereLexer_.js
+cp WhereListener_.js WhereListener.js
+rm WhereListener_.js
+cp WhereVisitor_.js WhereVisitor.js
+rm WhereVisitor_.js
+cp WhereParser_.js WhereParser.js
+rm WhereParser_.js

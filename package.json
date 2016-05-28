@@ -1,0 +1,46 @@
+{
+  "name": "where-clause-evaluate",
+  "version": "1.0.0",
+  "description": "A tool for evaluating where clauses",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "serve": "ember serve -lrp 35729",
+    "test": "node dev/tests/testRunner.js",
+    "build": "ember build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvellacott/where-clause-evaluate.git"
+  },
+  "keywords": [
+    "where",
+    "clause",
+    "evaluate"
+  ],
+  "author": "Benjamin Vellacott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bvellacott/where-clause-evaluate/issues"
+  },
+  "homepage": "https://github.com/bvellacott/where-clause-evaluate#readme",
+  "dependencies": {
+    "antlr4": "^4.5.3"
+  },
+  "devDependencies": {
+    "broccoli": "^0.16.9",
+    "broccoli-babel-transpiler": "^5.5.0",
+    "broccoli-browserify": "^0.1.0",
+    "broccoli-concat": "^2.2.0",
+    "broccoli-env": "0.0.1",
+    "broccoli-es6modules": "^1.2.2",
+    "broccoli-funnel": "^1.0.1",
+    "broccoli-merge-trees": "^1.1.1",
+    "broccoli-stew": "^1.3.1",
+    "broccoli-uglify-sourcemap": "^1.4.0",
+    "ember-cli": "^2.4.2",
+    "tap": "^5.7.2"
+  }
+}
