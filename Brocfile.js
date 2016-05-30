@@ -21,10 +21,10 @@ var tests = pickFiles('./dev/tests', {
 tests = esTranspiler(tests);
 
 tests = concat(tests, {
-  header: "var module;",
+  // header: "var module;",
   outputFile: './tests/tests.js',
   inputFiles: ['./tests/tests.js'],
-  footer: "module.exports(QUnit.test, Where);",
+  // footer: "module.exports(QUnit.test, Where);",
   sourceMapConfig: { enabled: false },
 });
 
