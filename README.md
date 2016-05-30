@@ -13,8 +13,7 @@ var record = {
   isEnlightening : true
 };
 
-// { cache : true }, so that the same clause doesn't get compiled more than once
-var evaluate = Where.newEvaluator({ cache : true });  
+var evaluate = Where.newEvaluator({ cache : true }); // { cache : true }, so that the same clause doesn't get compiled more than once
 
 console.log("We have an enlightening rednose amongst ourselves : " + evaluate(record, 'where firstName = "Rudolf" and isEnlightening = true'));
 
