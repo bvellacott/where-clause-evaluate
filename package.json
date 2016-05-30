@@ -1,6 +1,6 @@
 {
   "name": "where-clause-evaluate",
-  "version": "1.0.0",
+  "version": "1.0.01",
   "description": "A tool for evaluating where clauses",
   "main": "index.js",
   "directories": {
@@ -45,3 +45,4 @@
     "tap": "^5.7.2"
   }
 }
+  
