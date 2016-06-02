@@ -1,0 +1,22 @@
+{
+  "name": "where-clause-evaluate",
+  "description": "A tool for evaluating where clauses",
+  "main": "index.js",
+  "authors": [
+    "Benjamin Vellacott"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "where",
+    "clause",
+    "evaluate"
+  ],
+  "homepage": "https://github.com/bvellacott/where-clause-evaluate",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
