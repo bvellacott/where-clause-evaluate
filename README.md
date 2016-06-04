@@ -23,7 +23,7 @@ Supports precedence -> meaning brackets, and the operators/operations:
 
 =, !=, <, <=, >, >=, in (for constant arrays), and, or, not <- all case sensitive
 
-see the file js/lib/anlr4/parsers/where/Where.g4 for the grammar
+see the file dev/where/Where.g4 for the grammar
 
 I'm currently using this as a where clause/query evaluator for an Ember.js local datastorage adapter
 
