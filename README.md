@@ -13,9 +13,11 @@ var record = {
   isEnlightening : true
 };
 
-var evaluate = Where.newEvaluator({ cache : true }); // { cache : true }, so that the same clause doesn't get compiled more than once
+// { cache : true }, so that the same clause doesn't get compiled more than once
+var evaluate = Where.newEvaluator({ cache : true }); 
 
-console.log("We have an enlightening rednose amongst ourselves : " + evaluate(record, 'where firstName = "Rudolf" and isEnlightening = true'));
+var result = evaluate(record, 'where firstName = "Rudolf" and isEnlightening = true')
+console.log("We have an enlightening rednose amongst ourselves : " + result);
 ```
 Supports precedence -> meaning brackets, and the operators/operations:
 
