@@ -3,7 +3,7 @@
 Where clause parser, compiler, evaluator - A javascript tool to evaluate where clauses against objects in Ember.js 
 
 Works like so:
-
+```
 var Where = require("where-clause-evaluate");
 
 var record = { 
@@ -16,7 +16,7 @@ var record = {
 var evaluate = Where.newEvaluator({ cache : true }); // { cache : true }, so that the same clause doesn't get compiled more than once
 
 console.log("We have an enlightening rednose amongst ourselves : " + evaluate(record, 'where firstName = "Rudolf" and isEnlightening = true'));
-
+```
 Supports precedence -> meaning brackets, and the operators/operations:
 
 =, !=, <, <=, >, >=, in (for constant arrays), and, or, not <- all case sensitive
